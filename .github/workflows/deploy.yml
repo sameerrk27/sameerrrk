@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Fetch all history for git plugin
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -29,9 +29,6 @@ jobs:
 
       - name: Install Dependencies
         run: npm ci
-
-      - name: Install Quartz Plugins
-        run: npm run install-plugins
 
       - name: Build Quartz
         run: npx quartz build
